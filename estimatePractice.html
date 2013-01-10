@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var estimatePractice;
+		
+			function loadContentAfterScriptsLoad(node) {
+	        	estimatePractice = new EstimatePractice(node);
+	        	estimatePractice.render();
+	        };
+			
+	        function loadContent(node) {
+		        /*
+		         * this loadScripts() function call will load the javascript imports
+		         * into this html file 
+		         */
+	        	scriptloader.loadScripts('estimatePractice', document, node.id, eventManager);
+	        };
+
+	        /*
+	         * This is called when the student clicks on the save button below in the body
+	         */
+	        function save() {
+		        /*
+		         * calls the save function in estimatePractice.js
+		         */
+				estimatePractice.save();
+	        }
+                function checkEstimate() {
+		        /*
+		         * calls the checkEstimate function in estimatePractice.js
+		         */
+				estimatePractice.checkEstimate();
+                }
+		</script>
+	</head>
+
+	<body>
+		<!-- TODO create the html UI that the student will see when they visit the step -->
+		
+		<!-- the promptDiv, responseDiv, saveButtonDiv are not required, they are only provided as an example,
+			 you may delete all of these divs and create the body however you like -->
+		<div id='titleDiv'>
+                    <b>PRACTICE QUESTION</b>
+                    <p>Make an estimate for the problem:</p>
+                </div>
+		<div id='promptDiv'></div>
+		<div id='responseDiv'><!-- textarea id='studentResponseTextArea' rows='8' cols='80'></textarea -->
+                  
+                  <!-- The following div, stopReflectDiv is hidden by default, in css. -->  
+                  <!-- It gets revealed if the user makes three unreasonable estimates. -->  
+                  <!-- (An unreasonable estimate has more than +/- 15% error.) -->  
+                  <div id='stopReflectDiv'>
+                      <div id='stopReflectNotesDiv'>You have made several attempts.  Please stop and explain your thinking.</div>
+                      <div id="wordsSymbolsWrapperDiv">
+                        <div id="wordsDiv">
+                            <p>
+                                Describe your estimation strategy <br />
+                                or strategies with <b>words</b> here:
+                            </p>
+                            <textarea id='wordsTextArea' rows='4' cols='30'></textarea>
+                        </div>
+
+                        <div id="symbolsDiv">
+                            <p>
+                                Describe your estimation strategy or strategies<br />
+                                 with <b>numbers and symbols</b> here:
+                            </p>
+                            <textarea id='symbolsTextArea' rows='4' cols='30'></textarea>
+                            <p id="symbolResponseParagraph">Type your answer or click on the number-pad here:</p>
+                            <img id="numberpad" src="imgs/numberpad_approx_equals.png" alt="numberpad" />
+                        </div>
+                      </div>
+                        <div id="adjustmentDiv">
+                            <form>
+                                <input type="checkbox" id="adjustmentCheckbox" />
+                                Check this box if you want to adjust your estimate.
+                            </form>
+                            <div id="adjustmentDescriptionDiv">
+                                Describe how you adjust your estimate here:
+                                <textarea id='adjustmentTextArea' rows='2' cols='30'></textarea>
+                            </div>
+                        </div>
+                  </div> <!-- This is the end of the stopReflectDiv -->
+                    <hr />
+                    <div id="estimateDiv">
+                        <p>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Write your estimate here:
+                        </p>
+                        <textarea id='estimateTextArea' rows='1' cols='30'></textarea>
+                        <div id='checkEstimateButtonDiv'>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <input type='button' value='Check Estimate' onclick='checkEstimate()' />
+                        </div>
+                        <div id='errorBarDiv'>
+                            <canvas id="estimateCanvasId" width="270" height="45"></canvas>
+                        </div>
+                        <div id='estimateFeedbackText'></div>
+                    </div>
+                </div> <!-- end of responseDiv -->
+		<!-- div id='saveButtonDiv'><input type='button' value='Save' onclick='save()'></input></div -->
+	</body>
+</html>

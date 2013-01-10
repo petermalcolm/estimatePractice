@@ -1,0 +1,89 @@
+body {
+  font-family: Sans-Serif;
+}
+
+textarea{
+    resize: none;
+} 
+
+#stopReflectDiv {
+    display: none;
+}
+
+#stopReflectNotesDiv {
+    margin: 0px;
+    padding-top: 15px;
+    border: 0px;
+    width: 800px;
+    color: darkslategray;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+#wordsSymbolsWrapperDiv div {  /* divs within wordsSymbolsWrapperDiv */
+    width: 400px;
+    display: table-cell;
+    text-align: center;
+}
+
+#titleDiv {
+    width: 800px;
+}
+
+#titleDiv p {
+    text-align: center;
+}
+
+#promptDiv {
+    width: 800px;
+    text-align: center;
+    font-size: 36px;
+}
+
+#symbolsTextArea {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#symbolResponseParagraph {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    color: darkslategray;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#numberpad {
+    margin-top: 0px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+#adjustmentDiv {
+    padding-top: 15px;
+    font-size: 12px;
+    width: 400px;
+    margin-left: 265px;
+}
+
+#adjustmentDescriptionDiv {
+    display: none;
+}
+
+#estimateDiv {
+    width: 400px;
+    margin-left: 265px;
+}
+
+#estimateFeedbackText {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 260px;
+    color: darkslategray;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
